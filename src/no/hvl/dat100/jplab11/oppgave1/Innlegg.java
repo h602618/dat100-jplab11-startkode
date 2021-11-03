@@ -3,75 +3,73 @@ package no.hvl.dat100.jplab11.oppgave1;
 import no.hvl.dat100.jplab11.common.TODO;
 
 public abstract class Innlegg {
-	
-	// TODO - deklarering av objektvariable
-	
-	public Innlegg() {
-		
-	}
-	
-	public Innlegg(int id, String bruker, String dato) {
+	private int id;
+	private String bruker;
+	private String dato;
+	private int likes;
 
-		// TODO 
-		throw new UnsupportedOperationException(TODO.constructor("Innlegg"));
+	public Innlegg() {
+	}
+
+	public Innlegg(int id, String bruker, String dato) {
+		setId(id);
+		setBruker(bruker);
+		setDato(dato);
+
+		this.likes = 0;
 	}
 
 	public Innlegg(int id, String bruker, String dato, int likes) {
+		this(id, bruker, dato);
 
-		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.constructor("Innlegg"));
+		this.likes = likes;
 	}
-	
-	public String getBruker() {
-		
-		throw new UnsupportedOperationException(TODO.method());
 
+	public String getBruker() {
+		return this.bruker;
 	}
 
 	public void setBruker(String bruker) {
-		throw new UnsupportedOperationException(TODO.method());
+		this.bruker = bruker;
 	}
 
 	public String getDato() {
-		throw new UnsupportedOperationException(TODO.method());
-		
+		return this.dato;
 	}
 
 	public void setDato(String dato) {
-		throw new UnsupportedOperationException(TODO.method());
+		this.dato = dato;
 	}
 
 	public int getId() {
-		throw new UnsupportedOperationException(TODO.method());
+		return this.id;
 
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public int getLikes() {
-		throw new UnsupportedOperationException(TODO.method());
+		return this.likes;
 
 	}
-	
-	public void doLike () {
-		throw new UnsupportedOperationException(TODO.method());
+
+	public void doLike() {
+		likes++;
 	}
-	
+
 	public boolean erLik(Innlegg innlegg) {
-		throw new UnsupportedOperationException(TODO.method());
-
+		return this.id == innlegg.id;
 	}
-	
+
 	@Override
 	public String toString() {
-		
-		throw new UnsupportedOperationException(TODO.method());
-				
+		return id + "\n" + bruker + "\n" + dato + "\n" + likes + "\n";
 	}
-	
+
 	// Metoden nedenfor er kun for valgfri oppgave 6
 	public String toHTML() {
-		
 		throw new UnsupportedOperationException(TODO.method());
-				
 	}
 }
